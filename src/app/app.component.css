@@ -6,7 +6,7 @@ header {
   font-family: Arial, sans-serif;
   color: hsl(0, 0%, 100%);
   text-align: center;
-  padding: 20px;
+  padding: 20px 0;
   background-color: #1e1e1e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -19,11 +19,14 @@ h1 {
 nav ul {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 15px;
+  margin: 5px 15px;
 }
 
 nav ul li a {
@@ -35,4 +38,8 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #0056b3;
+}
+
+main {
+  padding-top: 120px;
 }
