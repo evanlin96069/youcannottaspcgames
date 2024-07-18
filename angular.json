@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portal-tas-timeline": {
+    "youcannottaspcgames": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/portal-tas-timeline",
+            "outputPath": "dist/youcannottaspcgames",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -50,10 +50,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "portal-tas-timeline:build:production"
+              "buildTarget": "youcannottaspcgames:build:production"
             },
             "development": {
-              "buildTarget": "portal-tas-timeline:build:development"
+              "buildTarget": "youcannottaspcgames:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -61,7 +61,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "portal-tas-timeline:build"
+            "buildTarget": "youcannottaspcgames:build"
           }
         },
         "test": {
