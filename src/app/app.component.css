@@ -42,5 +42,11 @@ nav ul li a:hover {
 }
 
 main {
-  padding-top: 120px;
+  padding-top: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 200px;
+  }
 }
