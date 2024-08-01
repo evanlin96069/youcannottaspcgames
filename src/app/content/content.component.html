@@ -1,5 +1,5 @@
-<div class="timeline">
-  @for (entry of timelineEntries; track $index; let e = $even) {
+<div class="block">
+  @for (entry of contentEntries; track $index; let e = $even) {
     <div class="container" data-aos="fade-up">
       <div class="content" [class.left]="e" [class.right]="!e">
         <h2>{{ entry.title }}</h2>

@@ -1,8 +1,6 @@
 import { Component, PipeTransform, Pipe } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Title, DomSanitizer } from '@angular/platform-browser';
-
-const title = 'You Cannot TAS PC Games';
+import { DomSanitizer } from '@angular/platform-browser';
 
 interface EntryData {
   title: string;
@@ -22,27 +20,22 @@ export class SafePipe implements PipeTransform {
 }
 
 @Component({
-  selector: 'app-timeline',
+  selector: 'app-content',
   standalone: true,
   imports: [SafePipe],
-  templateUrl: './timeline.component.html',
-  styleUrl: './timeline.component.css',
+  templateUrl: './content.component.html',
+  styleUrl: './content.component.css',
 })
-export class TimelineComponent {
-  timelineEntries: any;
+export class ContentComponent {
+  contentEntries: any;
 
   url: string = '/assets/data.json';
 
-  constructor(
-    private http: HttpClient,
-    private titleService: Title,
-  ) {
-    this.titleService.setTitle(title);
-  }
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get(this.url).subscribe((res) => {
-      this.timelineEntries = res;
+      this.contentEntries = res;
     });
   }
 }
