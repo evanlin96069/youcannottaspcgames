@@ -1,7 +1,7 @@
-import { Component, PipeTransform, Pipe } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { DomSanitizer } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NgxLiteYoutubeModule } from 'ngx-lite-video';
 
 interface EntryData {
   title: string;
@@ -11,20 +11,10 @@ interface EntryData {
   game: string;
 }
 
-@Pipe({ name: 'safe', standalone: true })
-export class SafePipe implements PipeTransform {
-  constructor(private sanitizer: DomSanitizer) {}
-  transform(videoId: string) {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(
-      'https://www.youtube.com/embed/' + videoId,
-    );
-  }
-}
-
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [SafePipe, FormsModule],
+  imports: [FormsModule, NgxLiteYoutubeModule],
   templateUrl: './content.component.html',
   styleUrl: './content.component.css',
 })

@@ -19,7 +19,7 @@
 </div>
 
 <div class="block">
-  @for (entry of filteredEntries; track $index; let e = $even) {
+  @for (entry of filteredEntries; track entry.videoId; let e = $even) {
     <div class="container" data-aos="fade-up">
       <div class="content" [class.left]="e" [class.right]="!e">
         <h2>{{ entry.title }}</h2>
@@ -27,12 +27,7 @@
       </div>
       <div class="video" [class.left]="!e" [class.right]="e">
         <div class="video-wrapper">
-          <iframe
-            [src]="entry.videoId | safe"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <ngx-lite-youtube [videoId]="entry.videoId"></ngx-lite-youtube>
         </div>
       </div>
     </div>
