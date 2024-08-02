@@ -7,8 +7,8 @@ interface EntryData {
   title: string;
   author: string;
   date: string;
-  videoId: string;
   game: string;
+  videoId: string;
 }
 
 @Component({
