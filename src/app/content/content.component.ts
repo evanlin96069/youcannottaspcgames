@@ -41,11 +41,16 @@ export class ContentComponent {
   sortByDate() {
     this.sorted = !this.sorted;
     this.filteredEntries.sort((a, b) => {
-      const dateA = new Date(a.date);
-      const dateB = new Date(b.date);
-      return this.sorted
-        ? dateA.getTime() - dateB.getTime()
-        : dateB.getTime() - dateA.getTime();
+      const dateA =
+        a.date === 'coming soon'
+          ? Number.MAX_SAFE_INTEGER
+          : new Date(a.date).getTime();
+      const dateB =
+        b.date === 'coming soon'
+          ? Number.MAX_SAFE_INTEGER
+          : new Date(b.date).getTime();
+
+      return this.sorted ? dateA - dateB : dateB - dateA;
     });
   }
 
