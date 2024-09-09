@@ -26,7 +26,7 @@ export class ContentComponent {
 
   url: string = '/assets/data.json';
 
-  games: string[] = ['Portal', 'Portal 2', 'Quake', 'Half-Life'];
+  games: string[] = ['Portal', 'Portal 2', 'Quake', 'Half-Life', 'Half-Life 2'];
 
   constructor(private http: HttpClient) {}
 
