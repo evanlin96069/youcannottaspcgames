@@ -39,7 +39,6 @@ export class ContentComponent {
   }
 
   sortByDate() {
-    this.sorted = !this.sorted;
     this.filteredEntries.sort((a, b) => {
       const dateA =
         a.date === 'coming soon'
@@ -54,6 +53,11 @@ export class ContentComponent {
     });
   }
 
+  toggleSortByDate() {
+    this.sorted = !this.sorted;
+    this.sortByDate();
+  }
+
   filterByGame() {
     if (this.selectedGame === 'All') {
       this.filteredEntries = this.contentEntries;
@@ -62,5 +66,6 @@ export class ContentComponent {
         (entry) => entry.game === this.selectedGame,
       );
     }
+    this.sortByDate();
   }
 }
