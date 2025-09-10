@@ -21,7 +21,7 @@ interface EntryData {
 export class ContentComponent {
   contentEntries: EntryData[] = [];
   filteredEntries: EntryData[] = [];
-  sorted: boolean = true;
+  sorted: boolean = false;
   selectedGame: string = 'All';
 
   url: string = '/assets/data.json';
